@@ -45,3 +45,7 @@ class PthreadQosTest {
 //
 //    case default // что-то среднее между 2 и 3 кейсом, по умолчанию, выставить нельзя
 //}
+
+var pthreadQosTest = PthreadQosTest()
+pthreadQosTest.test()
+print(readLine() ?? "rrr")
