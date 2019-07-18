@@ -8,5 +8,35 @@
 
 import Foundation
 
-print("Hello, World!")
+class PthreadQosTest {
+    func test() {
+        var thread = pthread_t(bitPattern: 0)
+        var atr = pthread_attr_t()
+        
+        pthread_attr_init(&atr)
+        pthread_set_qos_class_self_np(QOS_CLASS_DEFAULT, 0)
+    }
+}
 
+//@param __qos_class
+//* On output, a QOS class value:
+//*    - QOS_CLASS_USER_INTERACTIVE
+//*    - QOS_CLASS_USER_INITIATED
+//*    - QOS_CLASS_DEFAULT
+//*    - QOS_CLASS_UTILITY
+//*    - QOS_CLASS_BACKGROUND
+//*    - QOS_CLASS_UNSPECIFIED
+//* This value may be NULL in which case no value is returned.
+
+//public enum QualityOfService : Int {
+//
+//    case userInteractive
+//
+//    case userInitiated
+//
+//    case utility
+//
+//    case background
+//
+//    case default // что-то среднее между 2 и 3 кейсом, по умолчанию, выставить нельзя
+//}
