@@ -14,7 +14,12 @@ class PthreadQosTest {
         var atr = pthread_attr_t()
         
         pthread_attr_init(&atr)
-        pthread_set_qos_class_self_np(QOS_CLASS_DEFAULT, 0)
+//        pthread_set_qos_class_self_np(QOS_CLASS_DEFAULT, 0)
+        pthread_attr_set_qos_class_np(&atr, QOS_CLASS_USER_INTERACTIVE, 0)
+        pthread_create(&thread, &atr, { (pointer) -> UnsafeMutableRawPointer? in
+            print("It's test C Thread (1)")
+            return nil
+        }, nil)
     }
 }
 
