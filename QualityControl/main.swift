@@ -24,6 +24,7 @@ class PthreadQosTest {
 }
 
 
+// Opera start
 
 //@param __qos_class
 //* On output, a QOS class value:
